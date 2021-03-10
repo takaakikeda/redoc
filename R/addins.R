@@ -81,7 +81,7 @@ dedoc_to_new_file <- function(docx = NULL, showdiff = TRUE) {
   tmprmd <- dedoc(docx, dir = tempdir(), overwrite = TRUE)
   rstudioapi::documentNew(readfile(tmprmd), type = "rmarkdown")
   if (showdiff) {
-    print(
+    brio::write_lines(
       redoc_diff(docx)
     )
   }
